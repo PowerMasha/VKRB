@@ -1,0 +1,23 @@
+name: swapenh
+channels:
+  - defaults
+  - conda-forge
+  - pytorch
+dependencies:
+  - pip=21.2.4
+  - python=3.9.7
+  - pip:
+    - imageio-ffmpeg==0.4.5
+    - insightface==0.2.1
+    - moviepy==1.0.3
+    - numpy==1.21.2
+    - onnx==1.10.1
+    - onnxruntime==1.9.0
+    - onnxruntime-gpu==1.9.0
+    - -f https://download.pytorch.org/whl/torch_stable.html
+    - torch==1.9.1+cu111
+    - torchvision==0.10.1+cu111
+    - tqdm==4.62.3
+    - scikit-image
+    - pillow
+    - ninja==1.10.2

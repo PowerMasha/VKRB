@@ -1,0 +1,20 @@
+version: "3.5"
+
+services:
+  simswap:
+    environment:
+      USER_ID: ${USER_ID}
+      DOCKER_USER_NAME: ${DOCKER_USER_NAME}
+    build: .
+    command: bash ./run.sh
+    stdin_open: true
+    tty: true 
+    volumes:
+      - ./weights/DFDNet/experiments:/home/BasicSR/experiments:ro
+      - ./weights/SimSwap/checkpoints:/home/SimSwap/checkpoints:ro
+      - ./weights/SimSwap/insightface_func/models:/home/SimSwap/insightface_func/models:ro
+      - ./weights/SimSwap/parsing_model/checkpoint:/home/SimSwap/parsing_model/checkpoint:ro
+      - ./weights/SimSwap/arcface_model:/home/SimSwap/arcface_model:ro
+      - ./weights/GPEN/:/home/GPEN/weights:ro
+      - ./input:/home/input:ro
+      - ./output:/home/output
